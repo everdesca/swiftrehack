@@ -1,4 +1,4 @@
-package it.finconsgroup.swiftrehack.rest;
+package it.finconsgroup.swiftrehack;
 
 public class Greeting {
 

@@ -1,4 +1,4 @@
-package it.finconsgroup.swiftrehack.rest;
+package it.finconsgroup.swiftrehack;
 
 import java.util.List;
 
