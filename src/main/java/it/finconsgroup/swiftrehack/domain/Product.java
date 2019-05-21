@@ -6,13 +6,10 @@
 package it.finconsgroup.swiftrehack.domain;
 
 import java.io.Serializable;
-
-import javax.validation.constraints.NotNull;
-
+import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
-
 
 /**
  * A Product.
@@ -27,13 +24,21 @@ public class Product implements Serializable {
 
     @Field("name")
     private String name;
-    
+
     @Field("version")
     private String version;
 
-    @Field("type")
-    private String type;
+    @Field("productStructure")
+    private List<ProductStructure> productStructure;
 
+    @Field("inputParams")
+    private List<InputParam> inputParams;
+
+    @Field("productParms")
+    private InputParam productParms;
+
+    @Field("validationRules")
+    private InputParam validationRules;
 
     public String getId() {
         return id;
@@ -56,18 +61,7 @@ public class Product implements Serializable {
         this.name = name;
     }
 
-    public String getType() {
-        return type;
-    }
 
-    public Product type(String type) {
-        this.type = type;
-        return this;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
@@ -86,12 +80,4 @@ public class Product implements Serializable {
         return 31;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-            "id=" + getId() +
-            ", name='" + getName() + "'" +
-            ", type='" + getType() + "'" +
-            "}";
-    }
 }
