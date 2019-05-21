@@ -35,10 +35,10 @@ public class Product implements Serializable {
     private List<InputParam> inputParams;
 
     @Field("productParms")
-    private InputParam productParms;
+    private List<InputParam> productParms;
 
     @Field("validationRules")
-    private InputParam validationRules;
+    private List<InputParam> validationRules;
 
     public String getId() {
         return id;
@@ -61,8 +61,45 @@ public class Product implements Serializable {
         this.name = name;
     }
 
+    public String getVersion() {
+        return version;
+    }
 
-    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public List<ProductStructure> getProductStructure() {
+        return productStructure;
+    }
+
+    public void setProductStructure(List<ProductStructure> productStructure) {
+        this.productStructure = productStructure;
+    }
+
+    public List<InputParam> getInputParams() {
+        return inputParams;
+    }
+
+    public void setInputParams(List<InputParam> inputParams) {
+        this.inputParams = inputParams;
+    }
+
+    public List<InputParam> getProductParms() {
+        return productParms;
+    }
+
+    public void setProductParms(List<InputParam> productParms) {
+        this.productParms = productParms;
+    }
+
+    public List<InputParam> getValidationRules() {
+        return validationRules;
+    }
+
+    public void setValidationRules(List<InputParam> validationRules) {
+        this.validationRules = validationRules;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -78,6 +115,11 @@ public class Product implements Serializable {
     @Override
     public int hashCode() {
         return 31;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" + "id=" + id + ", name=" + name + ", version=" + version + ", productStructure=" + productStructure + ", inputParams=" + inputParams + ", productParms=" + productParms + ", validationRules=" + validationRules + '}';
     }
 
 }
